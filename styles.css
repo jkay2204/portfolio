@@ -87,3 +87,36 @@ h1 em,h2 em{color:var(--accent);font-style:normal}
 .timeline{border-top:1px solid var(--line);margin-top:2.5rem}.timeline-item{display:grid;grid-template-columns:180px 1fr;gap:2rem;padding:1.5rem 0;border-bottom:1px solid var(--line)}.year{font-family:"Space Grotesk";font-size:.72rem;letter-spacing:.08em;color:#77767a}.timeline-item h3,.achievement h3{font-family:"Space Grotesk";font-size:1.35rem;margin-bottom:.45rem}.timeline-item p,.achievement p{margin:0;color:#8d8c90}
 .achievement-list{border-top:1px solid var(--line);margin-top:2.5rem}.achievement{display:grid;grid-template-columns:72px 1fr;gap:1.3rem;padding:1.5rem 0;border-bottom:1px solid var(--line)}.medal{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#111;font-family:"Space Grotesk";font-weight:700}.contact-links{display:flex;flex-wrap:wrap;gap:1.5rem}.contact-link{font-size:1.5rem}
 @media(max-width:800px){.profile-orbit{width:78vw}.profile-photo{width:170px;height:170px}.bio-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:.5rem}.achievement{grid-template-columns:58px 1fr}}
+
+/* Precise circular portrait frame */
+.profile-photo-frame{
+  position:relative;
+  width:44%;
+  aspect-ratio:1;
+  border-radius:50%;
+  overflow:hidden;
+  z-index:3;
+  border:7px solid #17171a;
+  box-shadow:0 0 60px rgba(217,255,84,.14);
+  background:#111;
+}
+.profile-photo-frame .profile-photo{
+  width:100%;
+  height:100%;
+  display:block;
+  border:0;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:50% 27%;
+  box-shadow:none;
+}
+.profile-orbit .orbit-b{inset:22%;transform:none;z-index:1}
+@media (max-width:1100px) and (min-width:801px){
+  .hero{grid-template-columns:1fr 1fr;gap:2rem;padding-left:4vw;padding-right:4vw}
+  .hero-copy{min-width:0}
+  .hero-copy h1{font-size:clamp(3rem,6vw,5.5rem)}
+  .profile-orbit{width:min(390px,42vw)}
+}
+@media (max-width:800px){
+  .profile-photo-frame{width:44%}
+}
